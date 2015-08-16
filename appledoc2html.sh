@@ -19,34 +19,27 @@ companyID="com.369cloud.app";
 companyURL="http://www.369cloud.com";
 os="iphoneos";
 #os="macosx";
-outputPath="./help";
 
 while getopts "n:p:d:u:t:o:" arg 
 do
 	case $arg in
 		n)
 			companyName=$OPTARG #公司名称
-			echo 'companyName='$companyName
 			;;
 		p)
 	 		projectPath=$OPTARG #项目路径
-			echo 'projectPath='$projectPath
 			;;
 		d)
 	 		companyID=$OPTARG #项目id
-			echo 'companyID='$companyID
 			;;
 		u)
 	 		companyURL=$OPTARG #公司URL地址
-			echo 'companyURL='$companyURL
 			;;
 		t)
 			target=$OPTARG #项目target name	
-			echo 'target='$target
 			;;
 		o)
 	 		outputPath=$OPTARG #文档的输出路径
-			echo 'outputPath='$outputPath
 			;;
 		"?")
 			echo "Error! Unknown option $OPTARG"
@@ -85,9 +78,9 @@ fi
 # 判断输出路径是否传入
 if [ "$outputPath" == "" ];then
 	outputPath=$projectPath/help
-	echo 'outputPath='$outputPath
 fi
 
+# 判断URL是否传入
 docset_feed_url=$companyName
 if [ "$companyURL" != "" ];then
 	docset_feed_url=$companyURL/$companyName
@@ -111,3 +104,5 @@ fi
 --no-warn-invalid-crossref \
 --exit-threshold 2 \
 "${projectPath}"
+
+echo 'doc output path:'$outputPath
