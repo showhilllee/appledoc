@@ -36,4 +36,6 @@
 sh appledoc2html.sh -p /path/to/project -t targetName
 ```
 
-
+***
+详细使用及说明请移步博客：
+[http://blog.csdn.net/showhilllee/article/details/47685989](http://blog.csdn.net/showhilllee/article/details/47685989)
