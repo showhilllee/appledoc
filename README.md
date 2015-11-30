@@ -16,7 +16,7 @@
  sudo sh install-appledoc.sh
 ```
 
-执行完成之后就可以使用appledoc了，你也可以用appledoc –help查看所有可用的参数。
+执行完成之后就可以使用appledoc了，你也可以用`appledoc –help`查看所有可用的参数。
 
 #### 执行appledoc2html.sh
 ***
